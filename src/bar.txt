@@ -1,0 +1,3 @@
+This is the bar file 
+ welcome to the bar 
+  I hope you pass
