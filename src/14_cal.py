@@ -31,15 +31,15 @@ import sys
 import calendar
 from datetime import datetime
 
-input_date = input("Enter in the current date: month, year: ").split(",")
-
 today = datetime.today()
-current_month = today.month
-current_year = today.year
+datem = datetime(today.year, today.month, 1)
+month = datetime.now().month
+year = datetime.now().year
 
-if input_date[0] is "":
-    print(f"Month: {current_month}, Year: {current_year}")
-elif (input_date[0] != ""):
-    print(f"Month: {input_date[0]}, Year: {current_year}")
+input_year = input("Enter in the year: ")
+input_month = input("Enter in the month: ")
+
+if input_year and input_month != "":
+    print(calendar.month(int(input_year), int(input_month)))
 else:
-    print(f"Month: {input_date[0]}, Year: {input_date[1]}")
+    print(calendar.month(year, month))
