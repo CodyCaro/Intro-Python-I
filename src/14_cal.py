@@ -36,10 +36,14 @@ datem = datetime(today.year, today.month, 1)
 month = datetime.now().month
 year = datetime.now().year
 
-input_year = input("Enter in the year: ")
-input_month = input("Enter in the month: ")
+argLength = len(sys.argv)
 
-if input_year and input_month != "":
-    print(calendar.month(int(input_year), int(input_month)))
-else:
+input_month = input("Enter in the month: ")
+input_year = input("Enter in the year: ")
+
+if argLength == 0:
     print(calendar.month(year, month))
+if argLength == 1:
+    print(calendar.month(year, int(input_month)))
+if argLength == 2:
+    print(calendar.month(int(input_year), int(input_month)))
